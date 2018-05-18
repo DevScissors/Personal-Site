@@ -7,15 +7,9 @@
 <script src="https://use.fontawesome.com/373e144669.js"></script>
 <script>
 // Add active class to the current Nav Link (highlight it)    
-var header = document.getElementById("myTopnav");
-var navLinks = header.getElementsByClassName("navLink");
-for (var i = 0; i < navLinks.length; i++) {
-  navLinks[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+$('#myTopnav a').on('click', function(){
+    $(this).addClass('active').siblings().removeClass('active');
+});
 function myFunction() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
