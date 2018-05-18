@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sean Scissors/Web Dev (In training)</title>
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<script src="https://use.fontawesome.com/373e144669.js"></script>
+<script>
+// Add active class to the current Nav Link (highlight it)    
+var header = document.getElementById("myTopnav");
+var navLinks = header.getElementsByClassName("navLink");
+for (var i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+</head>
+<div class="header">
+    <h1>WIP(Website in progress)/Under Construction</h1>
+    <div class="topnav" id="myTopnav">
+        <a class="navLink active" href="/">Home</a>
+        <a class="navLink" href="/about">About Me</a>
+        <a class="navLink" href="/resume/SeanSResume_2018.pdf" target="_blank">Resum&eacute;</a>
+        <a class="navLink" href="/contact" title="contact">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+    </div>
