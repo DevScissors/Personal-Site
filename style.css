@@ -86,12 +86,6 @@ p {
   text-align: center;
 }
 
-/* Modify the main profile image */
-.profImage {
-  display: block;
-  margin: 0 auto;
-}
-
 /* Modify social media links 
 .social a:hover {
 
