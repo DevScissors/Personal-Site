@@ -6,11 +6,7 @@
 <meta charset="utf-8">
 <script src="https://use.fontawesome.com/373e144669.js"></script>
 <script>
-// Add active class to the current Nav Link (highlight it)    
-$("#myTopnav a").on("click", function(){
-    $(this).addClass("active").siblings().removeClass("active");
-});
-function myFunction() {
+    function myFunction() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
             x.className += " responsive";
@@ -18,6 +14,11 @@ function myFunction() {
             x.className = "topnav";
         }
     }
+
+    // Add active class to the current Nav Link (highlight it)    
+    $("#myTopnav a").on("click", function(){
+        $(this).addClass("active").siblings().removeClass("active");
+    });
 </script>
 </head>
 <div class="header">
@@ -26,7 +27,7 @@ function myFunction() {
         <a class="navLink active" href="/">Home</a>
         <a class="navLink" href="/about">About Me</a>
         <a class="navLink" href="/resume/SeanSResume_2018.pdf" target="_blank">Resum&eacute;</a>
-        <a class="navLink" href="/contact" title="contact">Contact</a>
+        <a class="navLink" href="/contact">Contact</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
           </a>
