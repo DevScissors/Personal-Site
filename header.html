@@ -4,26 +4,11 @@
 <title>Sean Scissors/Web Dev (In training)</title>
 <link rel="stylesheet" href="style.css">
 <meta charset="utf-8">
-<script src="https://use.fontawesome.com/373e144669.js"></script>
-<script>
-    function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
-    }
-
-    // Add active class to the current Nav Link (highlight it)    
-    $("#myTopnav a").on("click", function(){
-        $(this).addClass("active").siblings().removeClass("active");
-    });
-</script>
 </head>
+<body>
 <div class="header">
     <h1>WIP(Website in progress)/Under Construction</h1>
-    <div class="topnav" id="myTopnav">
+    <div class="topNav" id="myTopNav">
         <a class="navLink active" href="/">Home</a>
         <a class="navLink" href="/about">About Me</a>
         <a class="navLink" href="/resume/SeanSResume_2018.pdf" target="_blank">Resum&eacute;</a>
@@ -32,3 +17,8 @@
             <i class="fa fa-bars"></i>
           </a>
     </div>
+</div>
+</body>
+<script src="https://use.fontawesome.com/373e144669.js"></script>
+<script src="/js/navigation.js"></script>
+</html>
