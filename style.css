@@ -54,7 +54,7 @@ p {
     font-family: 'Arial', 'Helvetica', 'sans-serif';
 }
 
-/*Add responsiveness for smaller screens such as tablet or mobile*/
+/*Add responsiveness for smaller screens such as tablet or mobile
 @media screen and (max-width: 600px) {
     .topNav a:not(:first-child) {display: none;}
     .topNav a.icon {
@@ -77,7 +77,7 @@ p {
       text-align: left;
     }
   }
-
+*/
 .webTitle {
   text-align: center;
 }

@@ -1,4 +1,4 @@
-// Add active class to the current Nav Link (highlight it)  
+/* Add active class to the current Nav Link (highlight it)  
 var navContainer = document.getElementsByClassName("topNav");
 var navLinks = navContainer.getElementsByClassName("navLink")
 
@@ -9,7 +9,7 @@ for (var i = 0; i < navLinks.length; i++) {
       this.className += " active";
     });
   }
-
+*/
   function myFunction() {
     var x = document.getElementById("myTopNav");
     if (x.className === "topNav") {
