@@ -29,7 +29,7 @@
     font-weight: bold;
 }
 
-.topNav a.active {
+.topNav a:active {
     color:black;
 }
 
@@ -78,6 +78,11 @@ p {
     }
   }
 */
+.mainImg {
+  border:2px solid black;
+  border-radius: 50%;
+}
+
 .webTitle {
   text-align: center;
 }
