@@ -1,5 +1,5 @@
 /* Add active class to the current Nav Link (highlight it)  
-var navContainer = document.getElementsByClassName("topNav");
+var navContainer = document.getElementsById("myTopNav");
 var navLinks = navContainer.getElementsByClassName("navLink")
 
 for (var i = 0; i < navLinks.length; i++) {
@@ -8,13 +8,13 @@ for (var i = 0; i < navLinks.length; i++) {
       current[0].className = current[0].className.replace(" active", "");
       this.className += " active";
     });
-  }
-*/
+}*/
+
   function myFunction() {
     var x = document.getElementById("myTopNav");
     if (x.className === "topNav") {
         x.className += " responsive";
     } else {
-        x.className = "topnav";
+        x.className = "topNav";
     }
 }
