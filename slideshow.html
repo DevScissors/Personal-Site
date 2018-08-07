@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Slideshow</title>
+	<style>
+		body { margin: 0; background-color: silver; }
+		.slideshow { width: 100%; padding: 25px 0; text-align: center; }
+		.slideshow nav button { font-size: 1.5em; padding: 10px 20px; color: white; text-shadow: 0 0 5px black; background: linear-gradient(navy, cyan 25%, navy); border: 0; cursor: pointer; }
+		.slideshow figure { display: inline-block; margin: 0 auto; text-align: center; width: 250px; margin: 10px 9px; padding: 25px; background: linear-gradient(navy, blue 25%, navy); box-shadow: 0 5px  10px black; }
+		.slideshow figure.inactive { display: none; }
+		.slideshow figure.active { display: inline-block; opacity: 0; animation: fadein 1.5s forwards; }
+		.slideshow figure img { max-width: 250px; max-height: 250px; margin-bottom: 25px; border: 3px ridge cyan; }
+		.slideshow figure figcaption { color: white; font-size:  1.25em; }
+		@keyframes fadein {
+			to { opacity: 1; }
+		}
+	</style>
+	<script>
+	
+document.addEventListener("DOMContentLoaded", init);
+		
+function init(){
+	slideshow();
+}
+		
+function slideshow(){
+	document.querySelectorAll(".slideshow").forEach((s) => slideshowInit(s));
+}
+		
+function slideshowInit(slideshow){
+	slideshow.querySelectorAll("figure:not(:first-of-type)").forEach((fig) => fig.classList.add("inactive"));
+	slideshow.querySelector("figure").classList.add("active");
+	slideshow.querySelector("nav button:first-of-type").addEventListener("click", slideshowPrev);
+	slideshow.querySelector("nav button:last-of-type").addEventListener("click", slideshowNext);
+}
+		
+function slideshowPrev(e){
+	let button = e.target,
+		nav = button.parentElement,
+		slideshow = nav.parentElement,
+		active = slideshow.querySelector("figure.active"),
+		prev = active.previousElementSibling;
+	if (prev.tagName.toLowerCase() === "nav"){
+		prev = slideshow.querySelector("figure:last-of-type");
+	}
+	active.classList.remove("active");
+	active.classList.add("inactive");
+	prev.classList.remove("inactive");
+	prev.classList.add("active");
+}
+		
+function slideshowNext(e){
+	let button = e.target,
+		nav = button.parentElement,
+		slideshow = nav.parentElement,
+		active = slideshow.querySelector("figure.active"),
+		next = active.nextElementSibling;
+	if (!next){
+		next = slideshow.querySelector("figure:first-of-type");
+	}
+	active.classList.remove("active");
+	active.classList.add("inactive");
+	next.classList.remove("inactive");
+	next.classList.add("active");
+}
+	
+	</script>
+</head>
+<body>
+	<section class="slideshow">
+		<nav>
+			<button>Prev</button>
+			<button>Next</button>
+		</nav>
+		<figure>
+			<img src="https://buzzkeys.com/2016/09/15-wildest-water-slides-around-the-world.jpg" />
+			<figcaption>One</figcaption>
+		</figure>
+		<figure>
+			<img src="https://www.playquip.co.uk/wp-content/uploads/2012/09/Stainless-steel-embankment-slide-1-1024x768.jpg" />
+			<figcaption>Two</figcaption>
+		</figure>
+		<figure>
+			<img src="https://www.dunriteplaygrounds.com/store/image/cache/data/2013/spiralmetal2-500x500.jpg" />
+			<figcaption>Three</figcaption>
+		</figure>
+		<figure>
+			<img src="https://www.thegreenhead.com/imgs/gigantic-backyard-water-slide-3.jpg" />
+			<figcaption>Four</figcaption>
+		</figure>
+		<figure>
+			<img src="http://www.rose-vintage-instruments.com/newlook/imgsize.php?constrain=true&w=1024&h=768&img=../storeimages/pickett_and_other_slide_rules_march_10__2008004_edited.jpg" />
+			<figcaption>Five</figcaption>
+		</figure>
+	</section>
+</body>
+</html>

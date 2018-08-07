@@ -1,20 +1,13 @@
-/* Add active class to the current Nav Link (highlight it)  
-var navContainer = document.getElementsById("myTopNav");
-var navLinks = navContainer.getElementsByClassName("navLink")
+var navLinks = document.getElementById("myTopNav").getElementsByTagName("a");
+console.log(navLinks);
+var current = location.href;
 
-for (var i = 0; i < navLinks.length; i++) {
-    navLinks[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
-    });
-}*/
-
-  function myFunction() {
-    var x = document.getElementById("myTopNav");
-    if (x.className === "topNav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topNav";
-    }
+// Loop through the Navigation links and add the active class to the current/clicked item
+for (var i = 0; i < navLinks.length; i++) 
+{
+  if(navLinks[i].href == current)
+  {
+    navLinks[i].href="";
+    navLinks[i].className="active";
+  }   
 }

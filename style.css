@@ -1,10 +1,13 @@
 /* Style the header */
 #header {
     background-color: #f1f1f1;
-    text-align: center;
     background-image: url("http://seanscissors.com/images/Header-background.jpg");
     width: 100%;
     color: white;
+}
+
+#navBar {
+    display: inline-flex;
 }
 
 .mainContent {
@@ -19,11 +22,10 @@
 
 /* Style the top nav bar */
 .topNav a {
-    float: left;
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 22px 18px;
     text-decoration: none;
     font-weight: bold;
 }
@@ -53,9 +55,9 @@ p {
     font-family: 'Arial', 'Helvetica', 'sans-serif';
 }
 
-/*Add responsiveness for smaller screens such as tablet or mobile*/
+/*Add responsiveness for smaller screens such as tablet or mobile
 @media screen and (max-width: 600px) {
-    .topNav a:not(:first-child) {display: none;}
+    .topNav a {display: none;}
     .topNav a.icon {
       float: right;
       display: block;
@@ -76,8 +78,12 @@ p {
       text-align: left;
     }
   }
+  */
 
 .mainImg {
+  max-width:100%;
+  display: block;
+  height:auto;
   border:2px solid black;
   border-radius: 50%;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="Simple Lightbox">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Simple Lightbox</title>
+	<style>
+		body { text-align: center; }
+		main img { max-width: 150px; max-height: 150px; vertical-align: middle; margin-bottom: 5px; cursor: pointer; }
+		aside { display: none; }
+		aside.active { display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.75); }
+		aside.active img { max-height: 90vh; max-width: 90vw; border: 5px solid white; box-shadow: 0 0 10px black; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+	</style>
+	<script>
+/**********************************************/
+	
+var aside;
+		
+document.addEventListener("DOMContentLoaded", init);
+		
+function init(){
+	document.querySelectorAll("main img").forEach((img) => {
+		img.addEventListener("click", showLightbox);
+	});
+	
+	aside = document.querySelector("aside");
+	aside.addEventListener("click", hideLightbox);
+}
+		
+function showLightbox(e){
+	aside.innerHTML = e.target.outerHTML;
+	aside.classList.add("active");
+}
+		
+function hideLightbox(e){
+	aside.classList.remove("active");
+}
+		
+/**********************************************/
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Flowers</h1>
+	</header>
+	<main>
+		<img src="http://all4desktop.com/data_images/original/4245797-river.jpg" />
+		<img src="https://www.internationalrivers.org/sites/default/files/images/book/elizabeth_brink/kissimmee.gif" />
+		<img src="https://mballestero.files.wordpress.com/2013/12/raging-river-image.jpg" />
+		<img src="https://www.americanrivers.org/wp-content/uploads/2016/01/Upper-Missouri-National-Wild-and-Scenic-River-Roland-Taylor-DOI-1600x629.jpg" />
+		<img src="https://thewondrous.com/wp-content/uploads/2010/06/The-Sacramento-San-Joaquin-River-Delta.jpg" />
+		<img src="https://cdn.onlyinyourstate.com/wp-content/uploads/2015/10/5175226482_c7d938fc4c_b.jpg" />
+	</main>
+	<aside></aside>
+</body>
+</html>
